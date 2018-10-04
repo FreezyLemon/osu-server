@@ -2,7 +2,6 @@
 // Licensed under the MIT Licence - https://raw.githubusercontent.com/ppy/osu-server/master/LICENCE
 
 using System;
-using System.Threading;
 using MySql.Data.MySqlClient;
 
 namespace osu.Server.DifficultyCalculator

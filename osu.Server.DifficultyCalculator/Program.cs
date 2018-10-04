@@ -78,6 +78,9 @@ namespace osu.Server.DifficultyCalculator
             if (Rulesets != null)
                 rulesets.RemoveAll(r => Rulesets.All(u => u != r.RulesetInfo.ID));
 
+            Console.WriteLine("Waiting 30 seconds before connecting to MySQL");
+            Thread.Sleep(60 * 1000);
+
             database = new Database(AppSettings.ConnectionString);
 
             var tasks = new List<Task>();
