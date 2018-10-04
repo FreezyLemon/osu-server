@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ./ .
 
-RUN dotnet build ./osu.Server.sln -c Release
+RUN dotnet build ./osu.Server.sln -c Release -v quiet
 RUN cp -r ./osu.Server.DifficultyCalculator/bin/Release/netcoreapp2.0/ ./build/
 
 WORKDIR /app/build
