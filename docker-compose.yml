@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  osu-server:
+    build: ./
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+    networks:
+      - db-network
+
+  mysql:
+    image: mysql
+    environment:
+      - "MYSQL_DATABASE=osu"
+      - "MYSQL_USER=osu-user"
+      - "MYSQL_PASSWORD=test"
+    networks:
+      - db-network
+
+networks:
+  db-network:
